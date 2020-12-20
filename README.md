@@ -29,7 +29,7 @@ services:
     image: daocloud.io/library/elasticsearch:6.5.4
     ports:
       - "9200:9200"
-    environment:  # 分配的内容，必须指定，因为es默认指定2g，直接内存溢出了，必须改
+    environment:  # 分配的内存，必须指定，因为es默认指定2g，直接内存溢出了，必须改
       - "ES_JAVA_OPTS=-Xms128m -Xmx256m"
       - "discovery.type=single-node"
       - "COMPOSE_PROJECT_NAME=elasticsearch-server"
